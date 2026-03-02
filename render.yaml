@@ -1,33 +1,42 @@
 services:
-  # Backend Service (Django)
+  # ── Backend Service (Django) ─────────────────────────────────────────────────
   - type: web
     name: hms-backend
     runtime: python
-    buildCommand: "./render_build.sh"
-    startCommand: "cd Backend && gunicorn hms_backend.wsgi:application"
+    rootDir: Backend
+    buildCommand: "pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --no-input"
+    startCommand: "gunicorn hms_backend.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10.12
+        value: 3.11.0
       - key: DJANGO_SETTINGS_MODULE
         value: hms_backend.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com"
       - key: DATABASE_URL
         fromDatabase:
           name: hms-db
           property: connectionString
 
-  # Frontend Service (React/Vite)
+  # ── Frontend Service (React/Vite) ────────────────────────────────────────────
   - type: static
     name: hms-frontend
-    runtime: static
-    buildCommand: "cd Frontend && npm install && npm run build"
-    publishPath: "./Frontend/dist"
+    rootDir: Frontend
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: "./dist"
     envVars:
       - key: VITE_API_BASE_URL
         fromService:
           type: web
           name: hms-backend
-          property: host
+          property: hostWithScheme
+          suffix: /api
 
 databases:
   - name: hms-db
+    databaseName: hms_db
     plan: free
