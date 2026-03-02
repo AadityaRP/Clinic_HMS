@@ -31,11 +31,7 @@ services:
     staticPublishPath: "./dist"
     envVars:
       - key: VITE_API_BASE_URL
-        fromService:
-          type: web
-          name: hms-backend
-          property: hostWithScheme
-          suffix: /api
+        value: "https://hms-backend.onrender.com/api"
 
 databases:
   - name: hms-db
