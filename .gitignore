@@ -1,0 +1,20 @@
+# Python
+Backend/__pycache__/
+Backend/*.py[cod]
+Backend/*$py.class
+Backend/.env
+Backend/db.sqlite3
+Backend/staticfiles/
+Backend/venv/
+Backend/env/
+
+# Node
+Frontend/node_modules/
+Frontend/dist/
+Frontend/dist-ssr/
+Frontend/*.local
+Frontend/.env
+
+# OS
+.DS_Store
+Thumbs.db
