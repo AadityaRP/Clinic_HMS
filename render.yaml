@@ -2,7 +2,7 @@ services:
   # ── Backend Service (Django) ─────────────────────────────────────────────────
   - type: web
     name: hms-backend
-    runtime: python
+    env: python
     rootDir: Backend
     buildCommand: "pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --no-input"
     startCommand: "gunicorn hms_backend.wsgi:application"
@@ -22,9 +22,10 @@ services:
           name: hms-db
           property: connectionString
 
-  # ── Frontend Service (React/Vite) ────────────────────────────────────────────
-  - type: static
+  # ── Frontend Service (React/Vite static site) ────────────────────────────────
+  - type: web
     name: hms-frontend
+    env: static
     rootDir: Frontend
     buildCommand: "npm install && npm run build"
     staticPublishPath: "./dist"
