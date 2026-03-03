@@ -69,14 +69,9 @@ DATABASES = {
     "default": dj_database_url.config(
         default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
         conn_max_age=600,
+        ssl_require=True
     )
 }
-
-# Fix for Render SSL
-if not DEBUG and DATABASES['default'].get('ENGINE') == 'django.db.backends.postgresql':
-    DATABASES['default']['OPTIONS'] = {
-        'sslmode': 'no-verify',
-    }
 
 AUTH_USER_MODEL = 'core.User'
 
