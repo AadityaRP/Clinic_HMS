@@ -183,7 +183,7 @@ export default function DoctorPrescriptions() {
                             </div>
 
                             <div style={{ marginTop: 20, marginBottom: 20, borderTop: '1px solid var(--border)', paddingTop: 20 }}>
-                                <SentiAIButton label="SENTI AI ASSISTANT" />
+                                <SentiAIButton label="SENTI AI VOICE" />
                             </div>
 
                             <div className="form-actions" style={{ paddingTop: 16, borderTop: '1px solid var(--border)' }}>

@@ -78,7 +78,7 @@ export default function Sidebar({ user }) {
 
                 {user?.role === 'doctor' && (
                     <div style={{ padding: '16px 20px' }}>
-                        <SentiAIButton label="SENTI AI" />
+                        <SentiAIButton label="SENTI AI VOICE" />
                     </div>
                 )}
             </nav>

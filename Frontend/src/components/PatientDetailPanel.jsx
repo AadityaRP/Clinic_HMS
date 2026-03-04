@@ -106,7 +106,7 @@ export default function PatientDetailPanel({ patient, appointment, onClose }) {
 
                 <div style={{ marginTop: 24, borderTop: '1px solid var(--border)', paddingTop: 16 }}>
                     <div style={{ fontSize: 12, color: 'var(--text-muted)', marginBottom: 10, fontWeight: 600, textTransform: 'uppercase' }}>
-                        Voice Assistant
+                        SENTI AI VOICE
                     </div>
                     <SentiAIButton label="SENTI AI" />
                 </div>
