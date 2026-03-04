@@ -1,4 +1,4 @@
-import { useConversation } from '@elevenlabs/react';
+﻿import { useConversation } from '@elevenlabs/react';
 import { useState, useCallback } from 'react';
 import api from '../api';
 
@@ -10,7 +10,7 @@ export default function SentiAIButton({ agentId = 'agent_1001kjvtsa28efbah9rsmzj
         onDisconnect: () => console.log('Senti AI Disconnected'),
         onError: (err) => console.error('Senti AI Error:', err),
 
-        // ── CLIENT TOOLS: let the agent fetch live data from HMS ─────────────
+        // â”€â”€ CLIENT TOOLS: let the agent fetch live data from HMS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         clientTools: {
 
             // 1. Dashboard summary for the logged-in doctor
@@ -43,7 +43,7 @@ export default function SentiAIButton({ agentId = 'agent_1001kjvtsa28efbah9rsmzj
                     const appts = myDoc ? apptRes.data.filter(a => a.doctor === myDoc.id) : apptRes.data;
                     if (!appts.length) return 'No appointments scheduled for today.';
                     return appts.map(a =>
-                        `Token ${a.token_number}: ${a.patient_detail?.full_name}, ${a.patient_detail?.age} yrs — ${a.issue || 'No issue stated'} [${a.status}]`
+                        `Token ${a.token_number}: ${a.patient_detail?.full_name}, ${a.patient_detail?.age} yrs â€” ${a.issue || 'No issue stated'} [${a.status}]`
                     ).join('. ');
                 } catch {
                     return "Could not fetch today's appointments.";
@@ -108,7 +108,7 @@ export default function SentiAIButton({ agentId = 'agent_1001kjvtsa28efbah9rsmzj
                 }
             },
         },
-        // ─────────────────────────────────────────────────────────────────────
+        // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     });
 
     const isConnected = conversation.status === 'connected';
@@ -174,7 +174,7 @@ export default function SentiAIButton({ agentId = 'agent_1001kjvtsa28efbah9rsmzj
                     }} />
                 )}
                 <span>{isConnected ? 'STOP SENTI AI' : label}</span>
-                {!isConnected && <span>🎙️</span>}
+                {!isConnected && <span>ðŸŽ™ï¸</span>}
                 {isHovered && !isConnected && (
                     <div style={{
                         position: 'absolute', bottom: 0, left: 0, width: '100%', height: '3px',
@@ -188,7 +188,7 @@ export default function SentiAIButton({ agentId = 'agent_1001kjvtsa28efbah9rsmzj
                     fontSize: '11px', color: 'var(--teal-600, #0d9488)', textAlign: 'center',
                     marginTop: '5px', fontWeight: '600', animation: 'senti-fadein 0.5s ease'
                 }}>
-                    ● Agent is listening...
+                    â— Agent is listening...
                 </div>
             )}
 
@@ -210,3 +210,4 @@ export default function SentiAIButton({ agentId = 'agent_1001kjvtsa28efbah9rsmzj
         </div>
     );
 }
+
