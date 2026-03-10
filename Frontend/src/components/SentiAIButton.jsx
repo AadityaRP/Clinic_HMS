@@ -10,7 +10,7 @@ export default function SentiAIButton({ agentId = 'agent_0901kjpsdxxjf729dded03p
         onDisconnect: () => console.log('Senti AI Disconnected'),
         onError: (err) => console.error('Senti AI Error:', err),
 
-        // â”€â”€ CLIENT TOOLS: let the agent fetch live data from HMS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        //  CLIENT TOOLS: let the agent fetch live data from HMS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         clientTools: {
 
             // 1. Dashboard summary for the logged-in doctor
@@ -174,7 +174,6 @@ export default function SentiAIButton({ agentId = 'agent_0901kjpsdxxjf729dded03p
                     }} />
                 )}
                 <span>{isConnected ? 'STOP SENTI AI' : label}</span>
-                {!isConnected && <span>ðŸŽ™ï¸</span>}
                 {isHovered && !isConnected && (
                     <div style={{
                         position: 'absolute', bottom: 0, left: 0, width: '100%', height: '3px',
@@ -188,7 +187,7 @@ export default function SentiAIButton({ agentId = 'agent_0901kjpsdxxjf729dded03p
                     fontSize: '11px', color: 'var(--teal-600, #0d9488)', textAlign: 'center',
                     marginTop: '5px', fontWeight: '600', animation: 'senti-fadein 0.5s ease'
                 }}>
-                    â— Agent is listening...
+                    Agent is listening...
                 </div>
             )}
 
