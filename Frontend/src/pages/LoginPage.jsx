@@ -34,7 +34,7 @@ export default function LoginPage() {
                 <div className="login-logo">
                     <div className="login-logo-icon">🏥</div>
                     <div className="login-title">Global Hospital</div>
-                    <div className="login-subtitle">Bettercare,Everywhere</div>
+                    <div className="login-subtitle">Bettercare, Everywhere</div>
                 </div>
 
                 {error && <div className="login-error">{error}</div>}
