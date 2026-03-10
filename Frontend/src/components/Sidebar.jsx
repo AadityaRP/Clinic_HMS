@@ -56,8 +56,8 @@ export default function Sidebar({ user }) {
     return (
         <aside className="sidebar">
             <div className="sidebar-logo">
-                <div className="sidebar-logo-title">🏥 HMS</div>
-                <div className="sidebar-logo-subtitle">Hospital Management</div>
+                <div className="sidebar-logo-title">Global Hospital</div>
+                <div className="sidebar-logo-subtitle">Bettercare,Everywhere</div>
             </div>
 
             <div className="sidebar-role-badge">

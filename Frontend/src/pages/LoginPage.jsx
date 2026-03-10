@@ -33,8 +33,8 @@ export default function LoginPage() {
             <div className="login-card">
                 <div className="login-logo">
                     <div className="login-logo-icon">🏥</div>
-                    <div className="login-title">MediCare HMS</div>
-                    <div className="login-subtitle">Hospital Management System</div>
+                    <div className="login-title">Global Hospital</div>
+                    <div className="login-subtitle">Bettercare,Everywhere</div>
                 </div>
 
                 {error && <div className="login-error">{error}</div>}

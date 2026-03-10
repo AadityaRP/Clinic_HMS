@@ -10,7 +10,7 @@ export default function SentiAIButton({ agentId = 'agent_0901kjpsdxxjf729dded03p
         onDisconnect: () => console.log('Senti AI Disconnected'),
         onError: (err) => console.error('Senti AI Error:', err),
 
-        //  CLIENT TOOLS: let the agent fetch live data from HMS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        
         clientTools: {
 
             // 1. Dashboard summary for the logged-in doctor
