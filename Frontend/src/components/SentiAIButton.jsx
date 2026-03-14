@@ -2,7 +2,7 @@
 import { useState, useCallback } from 'react';
 import api from '../api';
 
-export default function SentiAIButton({ agentId = 'agent_0901kjpsdxxjf729dded03p3c9ht', label = 'SENTI AI VOICE', style = {} }) {
+export default function SentiAIButton({ agentId = 'agent_3601kkefy09bezrbfqqmjn9z2hpj', label = 'SENTI AI VOICE', style = {} }) {
     const [isHovered, setIsHovered] = useState(false);
 
     const conversation = useConversation({
