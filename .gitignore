@@ -1,20 +1,25 @@
 # Python
-Backend/__pycache__/
-Backend/*.py[cod]
-Backend/*$py.class
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
 Backend/.env
 Backend/db.sqlite3
 Backend/staticfiles/
-Backend/venv/
-Backend/env/
+**/.venv*
+**/venv/
+**/env/
 
 # Node
 Frontend/node_modules/
+**/node_modules/
 Frontend/dist/
 Frontend/dist-ssr/
 Frontend/*.local
 Frontend/.env
 
-# OS
+# OS & Editor
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
+*.swp

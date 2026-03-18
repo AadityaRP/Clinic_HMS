@@ -1,8 +1,8 @@
-﻿import { useConversation } from '@elevenlabs/react';
+import { useConversation } from '@elevenlabs/react';
 import { useState, useCallback } from 'react';
 import api from '../api';
 
-export default function SentiAIButton({ agentId = 'agent_3601kkefy09bezrbfqqmjn9z2hpj', label = 'SENTI AI VOICE', style = {} }) {
+export default function SentiAIButton({ agentId = import.meta.env.VITE_SENTI_AGENT_ID, label = 'SENTI AI VOICE', style = {} }) {
     const [isHovered, setIsHovered] = useState(false);
 
     const conversation = useConversation({
